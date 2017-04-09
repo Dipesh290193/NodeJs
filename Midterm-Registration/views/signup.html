@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-sm-6 forms">
+        <div class="page-header" ng-init="showAddModule = true">
+            <h4>Add Module
+            <span ng-show="showAddModule">
+            <a href = "" ng-click="showAddModule=false">Hide Form</a>
+            </span>
+            <span ng-hide="showAddModule">
+            <a href = "" ng-click="showAddModule=true">Show Form</a>
+            </span></h4>
+        </div>
+        <form ng-show = "showAddModule">
+            <div class="form-group" >
+                <label>Module Name</label>
+                <input type="text" ng-model = "moduleName" class="form-control"> </div>
+            <div class="form-group">
+                <label>Module Website</label>
+                <div class="input-group">
+                    <div class="input-group-addon">http://</div>
+                    <input type="text" ng-model = "moduleURL" ng class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click ="addModule()">Add Module</button>
+        </form>
+        <div class="page-header" ng-init = "showSignupModule = true">
+            <h4>Sign-Up
+            <span ng-show="showSignupModule">
+            <a href = "" ng-click="showSignupModule = false"  >Hide Form</a>
+            </span>
+            <span ng-hide="showSignupModule">
+            <a href = "" ng-click="showSignupModule = true" >Show Form</a>
+            </span>
+            </h4>
+        </div>
+        <form ng-show = "showSignupModule">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" ng-model = "firstName"> </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" ng-model = "lastName"> </div>
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" ng-model = "email"> </div>
+            <div class="form-group">
+                <label>Module</label>
+                <select class="form-control" ng-model = "group" >
+                    <option ng-repeat = "module in moduleList" ng-if="module.repeat > 1" value="{{$index}}">{{module.moduleName}} - Group 1
+                    </option>
+                    <option ng-repeat = "module in moduleList" ng-if="module.repeat <= 1" value="{{$index}}">{{module.moduleName}}
+                    </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click = "addStudent()">Sign-Up</button>
+        </form>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="col-sm-6 groups">
+        <div class="page-header">
+            <h4>Modules &amp; Groups</h4>
+        </div>
+        <div ng-repeat = "module in moduleList">
+         <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title" ng-if= "module.repeat > 1">                   
+                 <a  href="{{module.moduleURL}}" target="_blank">{{module.moduleName}} - Group 1</a>     </h4>
+                 <h4 class="panel-title" ng-if= "module.repeat <= 1">                   
+                 <a  href="{{module.moduleURL}}" target="_blank">{{module.moduleName}}</a>     </h4>
+            </div>
+            <div class="panel-body" >
+                <div ng-if="module.members.length == 0">
+                     <p class="text-center">No students have signed up for this module.</p>
+                </div>
+                <div ng-if="module.members.length != 0" >   
+                <table class="table table-bordered table-hover table-striped">
+                    <tr>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>E-mail</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat = "member in  module.members">
+                        <td>{{member.firstName}}</td>
+                        <td>{{member.lastName}}</td>
+                        <td>{{member.email}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-warning btn-sm" ng-click= "deleteStudent($parent.$index, $index)"> <span class="glyphicon glyphicon-trash"></span> </button>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <p class="text-right remove-group-link">
+                    <button class="btn btn-warning" ng-click="removeModule($index)"> <span class="glyphicon glyphicon-trash"></span> Remove Group </button>
+                </p>
+            </div>
+        </div> 
+        </div>
+    </div>
+</div>
