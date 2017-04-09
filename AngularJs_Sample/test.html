@@ -1,0 +1,17 @@
+<html >
+
+	<head>
+		<title>My First Angular Js Application</title>
+		 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script> 
+		 <script src = "test.js" ></script>
+	</head>
+
+	<body ng-app="myapp">
+		<div ng-controller = "HelloController">
+			<p>Hello {{student.firstName+' '+student.lastName}}!</p>
+			<p>Expense of books: {{cost*quntity}}</p>
+			<p>Roll No: {{student.rollNo}}</p>
+			<p>Marks(Avg): {{total/student.marks.length}}</p>
+		</div>
+	</body>
+</html>
