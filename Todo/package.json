@@ -1,0 +1,15 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A sample AngularJS application that highlights the use of several directives, controllers, and routes.",
+  "main": "index.js",
+  "scripts": {
+    "lite": "lite-server -port 10001", 
+    "start": "npm run lite"
+  },
+  "author": "Dipesh",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
