@@ -4,7 +4,7 @@ angular
         $scope.searchArtist = () => {
         	$scope.albums =""
             SpotifyService.search.get({
-                show: $scope.showname
+                artist: $scope.artistname
             }, (response) => {
             	console.log(response)
                 $scope.results = response

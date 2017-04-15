@@ -8,10 +8,10 @@ module.exports = () => {
 
 //https://api.spotify.com/v1/search?q=ariana&type=artist
     router.get('/api/search', (req, res) => {
-        const { show } = req.query 
+        const { artist } = req.query 
 
         superagent
-            .get('https://api.spotify.com/v1/search?q=' + show + '&type=artist')
+            .get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist')
             .end((err, response) => {
                 if (err)
                     res.send(err)
