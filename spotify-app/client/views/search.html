@@ -1,0 +1,80 @@
+<div class="search-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+
+            <form>
+               <h1 class="v-center">Search for an Artist</h1>
+
+               <div class="input-group">
+                  <input type="text" ng-model="showname" class="form-control input-md"/>
+                  <span class="input-group-btn">
+                     <button
+                        type="button"
+                        class="btn btn-primary"
+                        ng-click="searchArtist()">Search</button>
+                  </span>
+               </div>
+            </form>
+
+            <div ng-if="results" class="results-block">
+               <div ng-repeat="result in results.artists.items">
+
+                  <div class="row">
+                     <div class="show-name col-md-8"> {{result.name }}</div>
+                  </div>
+
+                  <div class="row">
+
+                     <div class="col-md-3" ng-if="result.images.length == 0">
+                        <img ng-src="./images/default-user.png"/>
+                     </div>
+
+                     <div class="col-md-3" ng-if="result.images.length != 0">
+                        <img ng-src="{{result.images[0].url}}"/>
+                     </div>
+
+                     <div class="col-md-8">
+                        <div><h4><b>Genres</b></h4></div>
+                           <span ng-repeat="genre in result.genres" ng-if="$index != result.genres.length -1">{{genre}} | </span>
+                        <span>{{result.genres[result.genres.length -1]}}</span>
+                        <br/>
+                        <div>
+                           <button class="btn btn-info" ng-click="showDetails(result.id,result.name,result.images)">Details</button>
+                        </div>
+                     </div>
+                  </div>
+
+                  <hr>
+
+               </div>
+            </div>
+
+            <div ng-if="albums">
+                  <div class="caption"><h2><b>{{name}}</b></h2></div>
+                  <div>
+                      <div ng-if="images.length == 0">
+                           <img class="img-rounded" alt="Cinque Terre" width="304" height="236" ng-src="./images/default-user.png"/>
+                        </div>
+
+                        <div ng-if="images.length != 0">
+                           <img class="img-rounded" alt="Cinque Terre" width="100%" height="100%" ng-src="{{images[0].url}}"/>
+                        </div>
+                  </div>
+              
+               <div><h3>{{name}}'s Albums</h3>
+                  <div ng-repeat="album in albums.items">
+                     <div class="col-md-4">
+                        <div class="thumbnail">
+                           <div class="caption"><b>{{album.name}}</b></div>
+                           <img ng-if="album.images.length == 0" ng-src="./images/default-album.jpg" alt="Lights" style="width:70%" />
+                           <img ng-if="album.images.length != 0" ng-src="{{album.images[0].url}}" alt="Lights" style="width:70%" />
+                        </div>
+                     </div>
+                  </div> 
+               </div>  
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

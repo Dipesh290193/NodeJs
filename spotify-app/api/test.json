@@ -1,0 +1,96 @@
+//Artists
+
+{
+  "artists" : {
+    "href" : "https://api.spotify.com/v1/search?query=shawn&type=artist&offset=0&limit=1",
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7n2wHs1TKAczGzO7Dd2rGr"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 3031350
+      },
+      "genres" : [ "canadian pop", "dance pop", "pop", "post-teen pop", "viral pop" ],
+      "href" : "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr",
+      "id" : "7n2wHs1TKAczGzO7Dd2rGr",
+      "images" : [ {
+        "height" : 1000,
+        "url" : "https://i.scdn.co/image/889d1206458b26f94aab88e23257706847b41091",
+        "width" : 1000
+      }, {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/383e1c64c5f5c00faab34bf3d93b91e88179a14f",
+        "width" : 640
+      }, {
+        "height" : 200,
+        "url" : "https://i.scdn.co/image/9a3488787c85c2b250b41f9cc11bd680e1bc10ff",
+        "width" : 200
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/e11faff72ec3bfcdd5b98c50535c565297c0fea4",
+        "width" : 64
+      } ],
+      "name" : "Shawn Mendes",
+      "popularity" : 84,
+      "type" : "artist",
+      "uri" : "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr"
+    } ],
+    "limit" : 1,
+    "next" : "https://api.spotify.com/v1/search?query=shawn&type=artist&offset=1&limit=1",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 995
+  }
+}
+
+
+
+
+//Albums
+
+
+
+{
+  "href" : "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr/albums?offset=0&limit=1&album_type=single,album,compilation,appears_on,ep",
+  "items" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7n2wHs1TKAczGzO7Dd2rGr"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr",
+      "id" : "7n2wHs1TKAczGzO7Dd2rGr",
+      "name" : "Shawn Mendes",
+      "type" : "artist",
+      "uri" : "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr"
+    } ],
+    "available_markets" : [ "JP" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6FLZDJq4UuwqcaQlI4XCP1"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6FLZDJq4UuwqcaQlI4XCP1",
+    "id" : "6FLZDJq4UuwqcaQlI4XCP1",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/e7f6a79e4c24e5090644085324d4cca8bcb7b137",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/e1abe5fc92f7019c7b8c64f02c65cf6129f1c999",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/081695d9f45a66cddc851ec72a143ee5b3547eba",
+      "width" : 64
+    } ],
+    "name" : "Illuminate",
+    "type" : "album",
+    "uri" : "spotify:album:6FLZDJq4UuwqcaQlI4XCP1"
+  } ],
+  "limit" : 1,
+  "next" : "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr/albums?offset=1&limit=1&album_type=single,album,compilation,appears_on,ep",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 144
+}
